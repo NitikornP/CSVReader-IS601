@@ -24,38 +24,56 @@ class html {
     public static function generateTable($records) {
 
         $count = 0;
-
+        print("<html>");
+        print("<head>
+<style type=\"text/css\">
+    
+    tr.header {background-color: Lightblue; height: 24px}
+    tr.even {background-color: Lightgreen; height: 24px}
+    tr.odd {background-color: Pink; height: 24px}
+ 
+    td:hover {background-color: Red;}
+</style>
+</head>");
+            print("<body>");
+        print("<table border='1'>");
         foreach ($records as $record) {
 
-            if ($count == 0) {
 
+            if ($count == 0) {
+                print("<tr class = 'header'>");
                 $array = $record->returnArray();
                 $fields = array_keys($array);
                 $values = array_values($array);
-                print_r($fields);
-                print_r($values);
+                foreach ($fields as $columnName)
+                    {
+                        print("<th>");
+                        print_r($columnName);
+                        print("</th>");
 
-            } else {
+                    }
+                print("</tr>");
+
+            }
+
+            {
+
+                print("<tr class='");print($count%2==0?"even":"odd");print("'>");
                 $array = $record->returnArray();
                 $values = array_values($array);
-
-                print_r($values);
+                foreach ($values as $columnValue)
+                {
+                    print("<td>");
+                    print_r($columnValue);
+                    print("</td>");
+                }
+                print("</tr>");
             }
             $count++;
-        }
 
-                 echo "<html><body><table>\n\n";
-                 $f = fopen("example.csv", "r");
-                 while (($line = fgetcsv($f)) !== false) {$row = $line[0];
-                 $cells = explode(";",$row);
-                 echo "<tr>";
-                 foreach ($cells as $cell) {
-                      echo "<td>" . htmlspecialchars($cell) . "</td>";
-                        }
-                      echo "</tr>\n";
-                    }
-                   fclose($f);
-                  echo "\n</table></body></html>";
+        }
+        print("</table>");
+        print("</body></html>");
     }
 }
 class csv {
@@ -124,4 +142,3 @@ class recordFactory {
     }
 
 }
-
