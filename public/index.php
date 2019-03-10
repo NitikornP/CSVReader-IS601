@@ -26,15 +26,16 @@ class html {
         $count = 0;
         print("<html>");
         print("<head>
-<style type=\"text/css\">
+              <style type=\"text/css\">
     
-    tr.header {background-color: Lightblue; height: 24px}
-    tr.even {background-color: Lightgreen; height: 24px}
-    tr.odd {background-color: Pink; height: 24px}
+                 tr.header {background-color: Lightblue; height: 24px}
+                 tr.even {background-color: Lightgreen; height: 24px}
+                 tr.odd {background-color: Pink; height: 24px}
  
-    td:hover {background-color: Red;}
-</style>
-</head>");
+                 td:hover {background-color: Red;}
+              </style>
+              </head>");
+
             print("<body><center>");
         print("<table border='1'>");
         foreach ($records as $record) {
