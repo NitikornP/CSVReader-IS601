@@ -28,11 +28,10 @@ class html {
         print("<head>
               <style type=\"text/css\">
     
-                 tr.header {background-color: Lightblue; height: 24px}
-                 tr.even {background-color: Lightgreen; height: 24px}
-                 tr.odd {background-color: Pink; height: 24px}
+                 tr.header {background-color: MediumSeaGreen; height: 24px}
+                 tr.even {background-color: Lightgray; height: 24px}
+                 tr.odd {background-color: Lightblue; height: 24px}
  
-                 td:hover {background-color: Red;}
               </style>
               </head>");
 
