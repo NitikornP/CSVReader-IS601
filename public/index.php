@@ -35,7 +35,7 @@ class html {
     td:hover {background-color: Red;}
 </style>
 </head>");
-            print("<body>");
+            print("<body><center>");
         print("<table border='1'>");
         foreach ($records as $record) {
 
@@ -73,7 +73,7 @@ class html {
 
         }
         print("</table>");
-        print("</body></html>");
+        print("</center></body></html>");
     }
 }
 class csv {
