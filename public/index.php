@@ -8,6 +8,18 @@
 
 main::start("example.csv");
 
+echo "<html><body><table>\n\n";
+$f = fopen("example.csv", "r");
+while (($line = fgetcsv($f)) !== false) {
+    echo "<tr>";
+    foreach ($line as $cell) {
+        echo "<td>" . htmlspecialchars($cell) . "</td>";
+    }
+    echo "</tr>\n";
+}
+fclose($f);
+echo "\n</table></body></html>";
+
 class main {
 
     static public function start($filename) {
@@ -43,6 +55,8 @@ class html {
             }
             $count++;
         }
+
+
     }
 }
 class csv {
@@ -111,3 +125,4 @@ class recordFactory {
     }
 
 }
+
