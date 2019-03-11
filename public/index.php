@@ -29,9 +29,7 @@ class html {
               <style type=\"text/css\">
     
                  tr.header {background-color: MediumSeaGreen; height: 24px}
-                 tr.even {background-color: Lightgray; height: 24px}
-                 tr.odd {background-color: Lightblue; height: 24px}
- 
+             
               </style>
               </head>");
 
@@ -58,7 +56,7 @@ class html {
 
             {
 
-                print("<tr class='");print($count%2==0?"even":"odd");print("'>");
+                print("<tr>");
                 $array = $record->returnArray();
                 $values = array_values($array);
                 foreach ($values as $columnValue)
